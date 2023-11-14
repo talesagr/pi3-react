@@ -1,0 +1,72 @@
+
+.divBotões {
+    flex-wrap: wrap;
+    width: 80%;
+    display: flex;
+    margin-top: 120px;
+    max-height: 50%;
+}
+.menu {
+    height: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.atendente,
+  .usuario,
+  .livro,
+  .autor,
+  .editora,
+  .genero,
+  .novoBotao1,
+  .novoBotao2,
+  .novoBotao3 {
+    box-sizing: border-box;
+  position: relative;
+  width: 100%; /* Ajustado para 100% para ocupar a largura do contêiner pai */
+  max-width: 400px; /* Defina um valor máximo para evitar que fique muito largo */
+  margin: 20px auto; /* Centralizar horizontalmente e adicionar espaçamento */
+  height: 265px;
+  background: #1C1F2A;
+  border: 5px solid #242633;
+  border-radius: 20px;
+}
+
+.atendenteIcon,
+  .usuarioIcon,
+  .livroIcon,
+  .autorIcon,
+  .ceditoraIcon,
+  .generoIcon {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 50%;
+    top: 30px;
+    transform: translateX(-50%); 
+  }
+
+  .atendenteButton,
+  .usuarioButton,
+  .clivroButton,
+  .autorButton,
+  .editoraButton,
+  .generoButton {
+    position: absolute;
+  width: 70%; /* Ajuste conforme necessário */
+  max-width: 250px; /* Defina um valor máximo para evitar que fique muito largo */
+  height: 75px;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%); /* Centralizar horizontalmente */
+  font-family: 'Fenix';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px; /* Ajuste conforme necessário */
+  line-height: 50px;
+  color: #EDDDB4;
+  background: #1C1F2A;
+  border: none;
+  }

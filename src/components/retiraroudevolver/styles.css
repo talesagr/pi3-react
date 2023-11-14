@@ -1,0 +1,84 @@
+.outsideFormLivro {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    background: #10141B;
+}
+.formLivroRD {
+    display: flex;
+    flex-direction: column;
+    margin-left: 194px;
+    margin-top: 92px;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.radioButtonsLivro{
+    color: #EDDDB4;
+    font-family: Fenix;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 72px;
+}
+
+.inputLivro {
+    width: 351px;
+    height: 53px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    border: 5px solid rgba(237, 221, 180, 0.80);
+    background: #242633;
+    color: #EDDDB4;
+    font-family: Fenix;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.divFormLivro input{
+    color: #EDDDB4;
+    font-family: Fenix;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 351px;
+    height: 42px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    border: 5px solid #242633;
+    background: rgba(36, 38, 51, 0.60);
+}
+
+
+.divFormLivro {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 61px;
+    color: #EDDDB4;
+    font-family: Fenix;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.radioLivro {
+    display: flex;
+}
+
+.divTextAreaLivro {
+    margin-right: 123px;
+    margin-top: 92px;
+    margin-bottom: 108px;
+    margin-left: 163px;
+    resize: none;
+    height: 592px;
+    width: 592px;
+}
