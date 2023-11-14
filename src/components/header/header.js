@@ -20,7 +20,7 @@ const Header = ( ) => {
                     </button>
                 </Link>
 
-                <Link to="/" className="bannerEscrita">Biblioteca Hogwarts</Link>
+                <Link to="/login" className="bannerEscrita">Biblioteca Hogwarts</Link>
 
                 <div className="sideBar">
                     <Sidebar isOpen={isSidebarOpen} onToggle={toggleSidebar}/>

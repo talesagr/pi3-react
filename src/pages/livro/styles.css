@@ -1,0 +1,8 @@
+.divbotoesMenuLivros {
+    display: flex;
+    justify-content: end;
+}
+
+.botoeMenuLivross {
+    margin-top: 48px;
+}
