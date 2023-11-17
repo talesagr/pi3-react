@@ -1,0 +1,26 @@
+/* Popup.css */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    z-index: 999;
+    display: none;
+  }
+  
+  .popup-content {
+    text-align: center;
+  }
+  
+  button {
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+ 
+  .popup.visible {
+    display: block;
+  }
+  
