@@ -1,11 +1,30 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 
 const CadastroLivro = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
-    console.log(errors);
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  const onSubmit = async (data) => {
+    try {
+      
+      const livroDTO = {
+        livrooid: null,
+        titulo: data.Titulo,
+        autoroid: 18, 
+        paginas: 300, 
+        editoraoid: 9, 
+        generooid: 18, 
+      };
+
+      const response = await axios.post("http://localhost:8080/api/livro", livroDTO);
+
+
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
     
     return (
       <form onSubmit={handleSubmit(onSubmit)}>

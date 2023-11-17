@@ -1,26 +1,53 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Livros from "../livros/livros";
-import './styles.css'
+import axios from "axios";
+import "./styles.css";
 
 const RetirarOuDevolverPage = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
-  const onSubmit = (data) => console.log(data);
-  const [operacao, setOperacao] = React.useState(null);
+  const [operacao, setOperacao] = useState(null);
+  const [livroList, setLivroList] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/api/livro");
+        setLivroList(response.data);
+      } catch (error) {
+        console.error("Error fetching livro data:", error);
+      }
+    };
+
+    fetchData();
+  }, []); 
 
   const handleRadioChange = (event) => {
     const { name, value } = event.target;
     if (name === 'operacao') {
       setOperacao(value);
-    } 
+    }
+  };
+
+  const onSubmit = async (data) => {
+    try {
+      const livroId = parseInt(data.livrooid);
+      const response = await axios.post(`http://localhost:8080/api/livro/${operacao.toLowerCase()}`, {
+        livrooid: livroId,
+      });
+
+      console.log(response.data);
+    } catch (error) {
+      console.error("Error making POST request:", error);
+    }
   };
 
   return (
     <div className="outsideFormLivro">
-      <form className="formLivroRD" onSubmit={handleSubmit((data) => console.log(data))}>
-        <div className="radioButtonsLivro">
+      <form className="formLivroRD" onSubmit={handleSubmit(onSubmit)}>
+        <div className="radioButtonsLivroRD">
           <div className="divradioLivro">
-            <div className="radioLivro">
+            <div className="radioLivroRD">
               <input
                 id="RETIRAR"
                 type="radio"
@@ -44,19 +71,19 @@ const RetirarOuDevolverPage = () => {
             </div>
           </div>
         </div>
-        <div className="divFormLivro">
-              Usuário<input type="text" {...register("usuario", { required: true })} />
-              Livro<input type="text" {...register("livro", { required: true })} />
-              Data<input type="date" {...register("data", { required: true })} />
-              {operacao === 'RETIRAR' && (
-                <>
-                  Até<input type="date" {...register("ate", { required: true })} />                </>
-              )}
+        <div className="divFormLivroRD">
+          Livro ID <input type="text" {...register("livrooid", { required: true })} />
+          Data <input type="date" {...register("data", { required: true })} />
+          {operacao === 'RETIRAR' && (
+            <>
+              Até <input type="date" {...register("ate", { required: true })} />
+            </>
+          )}
         </div>
-        <input className="inputLivro" type="submit" value={operacao === 'RETIRAR' ? 'RETIRAR' : 'DEVOLVER'} />
+        <input className="inputLivroRD" type="submit" value={operacao === 'RETIRAR' ? 'RETIRAR' : 'DEVOLVER'} />
       </form>
       <div className="divTextAreaLivro">
-        <Livros />
+        <Livros resultData={livroList} />
       </div>
     </div>
   );

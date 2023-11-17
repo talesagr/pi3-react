@@ -95,6 +95,8 @@
     margin-right: 132px;
     margin-bottom: 100px;
     margin-left: 174px;
+    width: 592px;
+    min-width: 592px;
 }
 
 .radiosEditoraGenero {

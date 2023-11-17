@@ -1,0 +1,45 @@
+.textAreaPessoa {
+  max-width: 100%;
+  overflow: auto;
+}
+
+.resultTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 2px solid #242633;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #242633;
+  color: #EDDDB4;
+}
+
+td {
+  background-color: rgba(36, 38, 51, 0.80);
+  color: #EDDDB4;
+}
+
+.textAreaPessoa button {
+  width: 200px;
+  height: 50px;
+  margin: 10px;
+  border: 2px solid #242633;
+  border-radius: 10px;
+  background-color: rgba(36, 38, 51, 0.60);
+  color: #EDDDB4;
+  font-family: Fenix;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.textAreaPessoa button:hover {
+  background-color: #EDDDB4;
+  color: #242633;
+}
